@@ -1,11 +1,12 @@
-""" aula 01 """
+""" Aula 01 - Introdução Repositório PY"""
 
-print('ola mundo')
+print('Olá mundo!')
+
 
 def somar(numero_01, numero_02):
-    """ somar - soma dois numeros """
+    """somar - soma dois números"""
     return numero_01 + numero_02
 
-SOMA = somar(25, 20)
 
+SOMA = somar(25, 20)
 print(SOMA)
