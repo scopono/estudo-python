@@ -1,5 +1,5 @@
 """ Exercício 03 - Função de Soma com Tupla"""
-
+breakpoint()
 def somar(n1, n2, n3):
     return n1 + n2 + n3
 

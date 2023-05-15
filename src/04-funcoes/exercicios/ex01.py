@@ -1,5 +1,5 @@
 """ Exercício 01 - Função de Soma com Print"""
-
+breakpoint()
 def somar(n1, n2, n3):
     print('O valor da soma desses números é: ', n1 + n2 + n3)
 

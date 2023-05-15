@@ -1,5 +1,5 @@
 """ Exercício 04 - Função de Soma com Args"""
-
+breakpoint()
 def somar(*args):
     soma = 0
     for parcela in args:

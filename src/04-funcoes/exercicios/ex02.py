@@ -1,5 +1,5 @@
 """ Exercício 02 - Função de Soma com Retorno"""
-
+breakpoint()
 def somar(n1, n2, n3):
     resultado = n1 + n2 + n3
     return resultado

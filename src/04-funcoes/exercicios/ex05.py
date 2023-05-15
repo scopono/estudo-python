@@ -1,5 +1,5 @@
 """ Exercício 05 - IMC"""
-
+breakpoint()
 def calcular_imc(individuo):
     peso = individuo['peso']
     altura = individuo['altura']
