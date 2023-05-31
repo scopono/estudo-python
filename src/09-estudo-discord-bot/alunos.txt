@@ -2,6 +2,4 @@ SP010101,João da Silva,joao@gmail.com
 SP020202,Maria Joana,maria@gmail.com
 SP030303,Anna Julia,anna.julia@hotmail.com
 SP040404,Carlos Souza,carlos@yahoo.com.br
-SP050505,Mauricio Ferreira,mauricio.f@gmail.com
-SP060606,Sérgio Moura,moura@gmail.com
-SP080808,Marcio Loura,marcio@gmail.com
+teste,teste,teste
