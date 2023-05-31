@@ -1,13 +1,15 @@
 import discord
 from discord.ext import commands
+from discord import app_commands
+MY_GUILD = discord.Object(id=1111997040906469426)
 
 class Images(commands.Cog):
     """ Works with images"""
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(name="foto", help="Envia uma foto aleatório do picsum. Argumentos: Altura e Largura")
-    async def get_random_image(self, ctx, altura, largura):
+    @app_commands.command(name="foto", description="Envia uma foto aleatório do picsum. Argumentos: Altura e Largura")
+    async def get_random_image(self, interaction:discord.Interaction, altura:str, largura:str):
         url_image = f"https://picsum.photos/{altura}/{largura}"
 
         embed_image = discord.Embed(
@@ -25,7 +27,7 @@ class Images(commands.Cog):
         embed_image.add_field(name="Exemplo", value=url_image, inline=False)
         embed_image.set_image(url=url_image)
 
-        await ctx.send(embed=embed_image)
+        await interaction.response.send_message(embed=embed_image)
 
 def setup(bot):
-    return bot.add_cog(Images(bot))
+    return bot.add_cog(Images(bot), guilds=[MY_GUILD])

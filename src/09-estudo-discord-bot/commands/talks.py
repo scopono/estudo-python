@@ -1,26 +1,28 @@
 import discord
 from discord.ext import commands
+from discord import app_commands
+MY_GUILD = discord.Object(id=1111997040906469426)
 
 class Talks(commands.Cog):
     """ Talks with user"""
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(name="oi", help="Envia um Oi (Não requer argumento)") 
-    async def send_hello(self, ctx): 
-        name = ctx.author.name
+    @app_commands.command(name="oi", description="Envia um Oi (Não requer argumento)") 
+    async def send_hello(self, interaction: discord.Interaction): 
+        name = interaction.user.name
         response = "Olá, " + name
-        await ctx.send(response)
+        await interaction.response.send_message(response)
 
-    @commands.command(name="segredo", help="Envia um segredo no privado. Não requer um argumento.")
-    async def secret(self, ctx):
+    @app_commands.command(name="segredo", description="Envia um segredo no privado. Não requer um argumento.")
+    async def secret(self, interaction: discord.Interaction):
         try:
-            await ctx.author.send("nteste")
-            await ctx.author.send("teste1")
-            await ctx.author.send("teste2")
+            await interaction.response.send_message("nteste")
+            await interaction.response.send_message("teste1")
+            await interaction.response.send_message("teste2")
         except discord.errors.Forbidden:
-            await ctx.send(
+            await interaction.response.send_message(
             "Não posso te contar o segredo, habilite receber mensagens de qualquer pessoa do servidor (Opções > Privacidade)"
             )
 def setup(bot):
-    return bot.add_cog(Talks(bot))
+    return bot.add_cog(Talks(bot), guilds=[MY_GUILD])
