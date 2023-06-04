@@ -1,6 +1,6 @@
 from reportlab.lib.pagesizes import letter
 from reportlab.lib.styles import getSampleStyleSheet
-from reportlab.platypus import SimpleDocTemplate, Spacer, Paragraph, Table, TableStyle
+from reportlab.platypus import SimpleDocTemplate, Spacer, Paragraph, Table, TableStyle, Image
 
 # Definindo o estilo do título
 title_style = getSampleStyleSheet()["Title"]
@@ -26,6 +26,11 @@ doc = SimpleDocTemplate("exemplo.pdf", pagesize=letter)
 
 # Lista para armazenar os elementos do PDF
 elements = []
+
+# Imagem
+im = Image("src/10-estudo-reportlab/ifsplab.jpg")
+im.hAlign = 'CENTER'
+elements.append(im)
 
 # Título
 title = Paragraph("Título do Documento", title_style)
